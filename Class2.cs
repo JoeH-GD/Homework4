@@ -164,8 +164,9 @@ namespace Homework4
 
            
               Console.WriteLine();
-               localArray = localArray.Inverse();
-               localArray.PrintArray();
+               int[] multiArray = localArray.Inverse();
+              localArray = multiArray;
+              localArray.PrintArray();
 
              Console.WriteLine();
              
