@@ -96,7 +96,7 @@ namespace Homework4
 
         #region Methods
 
-        public static void PrintArray(int[] arr)
+        public void PrintArray()
         {
             for (int i = 0; i < arr.Length; i++)
             {
@@ -105,7 +105,7 @@ namespace Homework4
             Console.WriteLine();
         }
 
-        public static int[] Inverse(int[] arr)
+        public  int[] Inverse()
         {
             int[] arrInverted = new int[arr.Length];
             Array.Copy(arr, arrInverted, arr.Length);
@@ -118,17 +118,17 @@ namespace Homework4
             return arrInverted;
         }
 
-        public static int[] Multi(int[] arr,int n)
+        public int[] Multi(int n)
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = arr[i]*n;
+                arr[i] = arr[i] * n;
             }
             return arr;
         }
 
         #endregion
-
+    }
 
         class Class2
         {
@@ -161,25 +161,23 @@ namespace Homework4
 
                     Console.Write($"{localArray[i]}\t");
                 }
-               
-                Console.WriteLine();
-                arr = Multi(arr, 5);
 
-                for (int i = 0; i < arr.Length; i++)
-                {
-                    
-                    Console.Write($"{arr[i]}\t");
-                }
+           
+              Console.WriteLine();
+               int[] multiArray = localArray.Inverse();
+              localArray = multiArray;
+              localArray.PrintArray();
 
+             Console.WriteLine();
+             
 
-                Console.WriteLine();
-                arr = Inverse(arr);
+               //localArray.PrintArray();
 
-                PrintArray(arr);
+                Console.WriteLine(localArray.Summ);
 
                 Console.ReadLine();
             }
 
         }
     }
-}
+
